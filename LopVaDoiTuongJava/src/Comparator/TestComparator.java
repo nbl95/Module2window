@@ -1,0 +1,22 @@
+package Comparator;
+
+import java.util.Arrays;
+
+public class TestComparator {
+    public static void main(String[] args) {
+        Circle[] circles = new Circle[3];
+        circles[0] = new Circle(3.6);
+        circles[1] = new Circle();
+        circles[2] = new Circle(3.5);
+        System.out.println("pre-sorted:");
+        for (Circle circle : circles) {
+            System.out.println(circle.getRadius());
+        }
+        CircleComparator circleComparator = new CircleComparator();
+        Arrays.sort(circles, circleComparator);
+        System.out.println("after-sorted:");
+        for (Circle circle : circles) {
+            System.out.println(circle.getRadius());
+        }
+    }
+}
